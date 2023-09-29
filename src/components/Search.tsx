@@ -1,9 +1,11 @@
 import { Box, Grid, TextField } from "@mui/material";
+import { IoSearchOutline } from "react-icons/io5";
 
 const Search = () => {
     return (
         <Grid className="search">
             <Grid className="searchForm">
+                <IoSearchOutline className="searchIcon" />
                 <Box
                     component="form"
                     noValidate

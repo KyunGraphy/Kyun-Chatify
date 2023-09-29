@@ -16,6 +16,7 @@ const Sidebar = () => {
                 <Chats />
                 <Chats />
                 <Chats />
+                <Chats />
             </Grid>
         </Grid>
     );

@@ -7,7 +7,6 @@
 }
 
 .homeContainer {
-    border: 1px solid #ddd;
     border-radius: 10px;
     width: 75%;
     height: 80%;
@@ -37,13 +36,13 @@
     font-size: 14px;
 }
 
-.search {
+.searchIcon {
+    display: none;
 }
 
 .userChatList {
     height: 440px;
     overflow: auto;
-
 }
 
 .userChat {
@@ -79,148 +78,145 @@
     flex: 2;
 }
 
-/* .homeBox {
-    min-width: 85vw;
-    height: 90vh;
-    background: #eee;
-}
-
-.homeTitle {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.homeBar,
-.homeBarContent {
-    display: flex;
-    color: #ddd;
-}
-
-.homeBar > div {
+.chatInfo {
+    height: 60px;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.homeContact {
-    padding: 1em;
-    flex: 2;
     background: #483d8b;
 }
 
-.homeUser {
+.chatInfo > span {
     display: flex;
-    gap: 1em;
     align-items: center;
-    font-weight: 600;
+    gap: 0.5em;
     cursor: pointer;
 }
 
-.homeChatUser {
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    padding: 0 0.5em;
-    border-radius: 4px;
-    width: 100%;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.homeChatUser:hover {
-    background: #4682b4;
-}
-
-.homeChatUser > p {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.homeChatTools {
-    flex: 5;
-}
-
-.homeChatToolsBar {
-    background: #5f9ea0;
-}
-
-.homeChatToolsBar > div {
-    padding: 1em;
-}
-
-.chatTools {
+.chatIcon {
     display: flex;
     gap: 1em;
 }
 
-.chatTools > svg {
+.chatIcon > svg {
     cursor: pointer;
     font-size: 20px;
 }
 
-.homeChatToolsBox {
-    background: #b0e0e6;
-    color: #333;
-}
-
-.homeMessages {
-    height: 92%;
-    padding: 1em;
-}
-
-.homeMessages > span {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.homeMessageBox {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    padding: 0 4em 0 1em;
+.messages {
+    background: #ddddf7;
+    padding: 10px;
+    height: calc(100% - 110px);
+    color: #483d8b;
+    overflow: auto;
 }
 
 .message {
-    display: block;
-    padding: 1em;
-    margin: 0.5em 0;
-    width: 80%;
-    background: #fff;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-.owner {
-    margin: 0.5em 0.5em 0.5em auto;
-    background: #5f9ea0;
-    color: #fff;
-}
-
-.messageType {
-    position: relative;
-    width: 100%;
-    height: 8%;
-}
-
-.messageType > span {
     display: flex;
-    gap: 0.5em;
+    gap: 0.75em;
+    padding: 0.25em;
+    margin-bottom: 0.25em;
+    align-items: flex-end;
+
+    &.owner {
+        flex-direction: row-reverse;
+    }
+
+    &.owner > .messageContent > p {
+        background: #8da4f1;
+        color: #fff;
+        border-radius: 10px 0 10px 10px;
+    }
+}
+
+.messageInfo > span {
+    font-size: 12px;
+    color: gray;
+}
+
+.messageContent {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.messageContent > p {
+    background: #fff;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 0 8px 8px 8px;
+}
+
+.messageContent > img {
+    border-radius: 8px;
+    max-width: 65%;
+}
+
+.input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+    background: #fff;
+}
+
+.inputField {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+        color: lightgray;
+    }
+}
+
+.send {
+    display: flex;
+    gap: 0.25em;
+    align-items: center;
     font-size: 1.5em;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 18px;
-    cursor: pointer;
+    color: #483d8b;
+}
+
+.sendBtn {
+    background: #483d8b;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.sendBtn:hover {
+    background: #fff;
+    border: 1px solid #483d8b;
     color: #483d8b;
 }
 
 /* MEDIA QUERY */
-@media only screen and (max-device-width: 700px) {
-    /* STYLES HERE */
-    .homeChatUser > p {
+@media only screen and (max-width: 480px) {
+    .navbar > div,
+    .searchForm > form,
+    .userChatBox {
         display: none;
     }
-} */
+
+    .searchIcon {
+        display: block;
+        margin: 0.5em;
+        font-size: 20px;
+    }
+
+    .chat {
+        flex: 3;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .chatInfo > h3 {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1200px) {
+}
